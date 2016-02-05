@@ -15,19 +15,19 @@
 	<div class="col-lg-2">
 			<p>
 				<div id="lake" class="power" data-power="water" ng-class="blue">
-					<a href="#" class="col-lg-12 btn btn-info" ng-click="lake()">Lake</a>
+					<a href="#" class="col-lg-12 btn btn-info" ng-click="lake(); active='btn-info'">Lake</a>
 				</div>
 			</p>
 			<p>
 				<div id="campfire" class="power" data-power="fire" ng-class="red">
-					<a href="#" class="col-lg-12 btn btn-danger" ng-click="fire()">Campfire</a>
+					<a href="#" class="col-lg-12 btn btn-danger" ng-click="fire(); active='btn-danger'">Campfire</a>
 				</div>
 			</p>
 	</div>
 
 	<div class="col-lg-8">
 		<ul id="land" class="list-inline list-vert-stack">
-			<li ng-repeat="tile in land track by $index" ng-click="selected($index)"><a href="#" class="btn btn-default" ng-style="setColor" >{{tile}}</a></li>
+			<li ><a href="#" class="btn btn-default" ng-class="tile.class" ng-repeat="tile in land track by $index"  ng-click="tile.class=active">{{tile.tile}}</a></li>
 		</ul>
 	</div>
 
