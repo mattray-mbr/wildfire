@@ -20,14 +20,14 @@
 			</p>
 			<p>
 				<div id="campfire" class="power" data-power="fire" ng-class="red">
-					<a href="#" class="col-lg-12 btn btn-danger" ng-click="fire(); burn = true" >Campfire</a>
+					<a href="#" class="col-lg-12 btn btn-danger" ng-click="fire()">Campfire</a>
 				</div>
 			</p>
 	</div>
 
 	<div class="col-lg-8">
 		<ul id="land" class="list-inline list-vert-stack">
-			<li ng-repeat="tile in land track by $index" ng-click="selected = $index"><a href="#" class="btn btn-default" ng-class="{'btn-danger': (selected === $index && burn === true)}" >{{tile}}</a></li>
+			<li ng-repeat="tile in land track by $index" ng-click="selected($index)"><a href="#" class="btn btn-default" ng-style="setColor" >{{tile}}</a></li>
 		</ul>
 	</div>
 
